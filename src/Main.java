@@ -17,11 +17,11 @@ public class Main {
 		Detector humanFaceDetector = new HumanFaceDetector();
 		
 		CascadeClassifier classifier = humanFace.faceClassifier("haarcascade_frontalface_alt.xml");
-		Mat image = humanFace.imageFace("C:\\Users\\infiniteLoop\\Downloads\\picture.jpg");
+		Mat image = humanFace.imageFace("picture.jpg");
 		
 		MatOfRect faceDetected = humanFaceDetector.detectMultiScale(image, classifier);
 		image = humanFaceDetector.markDetected(image, faceDetected);
 		
-		humanFace.saveImage(image, "C:\\detectedFace.jpg");
+		humanFace.saveImage(image, "detectedFace.jpg");
 	}
 }
